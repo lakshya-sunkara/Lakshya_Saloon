@@ -64,6 +64,9 @@ function checkAdmin(req, res, next) {
 
 
 
+app.get('/status', (req, res) => {
+  res.send("✅ Server is running on Render!");
+});
 
 
 
