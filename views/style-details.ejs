@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= style.name %> - Style Details</title>
+  <link rel="stylesheet" href="/Styles.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+ 
+</head>
+<body>
+       <header>
+        <nav>
+            <div class="head-home">
+                <div class="humberg-icon">
+                    <i class="fas fa-bars" onclick="toggleSearch(event)" ></i>
+                    
+                </div>
+                <img src="/images/logo.jpg"/>
+                <h1>Saloon</h1>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search...">
+                        <i class="fas fa-search search-icon" ></i>
+                    </div>
+                    <a title="profile" id="profileIcon" onclick="toggleSearch1(event)"><i class="fa fa-user" ></i> </a>
+            </div>
+            <div class="option-container" id="option-icon">
+                <ul style="list-style: none;">
+                    <a href="/home"><li><i class="fa fa-home"></i> Home</li></a>
+                    <a href="/service"><li><i class="fa-solid fa-cogs"></i> Services</li></a>
+                    <a href="/appointment"><li><i class="fa fa-calendar-check"></i>  Appointments</li></a>
+                    
+                    <li><i class="fa-solid fa-receipt"></i>  payment history</li>
+                    <li><i class="fa fa-credit-card"></i> Payments</li>
+                    <a href="/about_us"><li><i class="fa-solid fa-user-group"></i> About us
+                    </li></a>
+                    <a href="#" onclick="document.getElementById('logout-form').submit();"><li><i class="fa fa-sign-out-alt"></i> Sign out</li></a>
+                    <form id="logout-form" style="display: none;" action="/log-out" method="post">
+                        
+                    </form>
+                        
+                </ul>
+            </div>  
+            </nav>
+    </header>
+    <div class="profile-container" id="profile-container">
+        <h1>profile</h1>
+        <img src="./images/profile_picture_new.jpg"/>
+        <p ><b>username: </b><span id="username"></span></p>
+        <p ><b>Name: </b><span id="name"></span></p>
+        <p ><b>Email id: </b><span id="email"></span></p>
+        <p ><b>PhoneNumber: </b><span id="phone"></span></p>
+        <p ><b>Address: </b><span id="address"></span></p>
+        <p ><b>Gender: </b><span id="gender"></span></p>
+        <p ><b>Date Of Birth: </b><span id="dob"></span></p>
+        <button id="edit-profile">edit profile</button>
+        <button id="delete-account">Delete Account</button>
+    </div>
+
+
+
+
+
+
+  <div class="detail-wrapper">
+    <div class="images-row" id="imageGallery">
+
+  <% for (let i = 0; i < 6; i++) { %>
+  <img src="<%= style.image %>" alt="Image <%= i + 1 %> of <%= style.name %>">
+<% } %>
+
+    </div>
+
+    <div class="details">
+      <h2 id="styleName"><%= style.name %></h2>
+      <p><strong>Category:</strong> <span id="styleCategory"><%= style.category %></span></p>
+      <p><strong>Price:</strong> ₹<span id="stylePrice"><%= style.price %></span></p>
+    </div>
+
+   <form action="/book-appointment" method="GET">
+  <input type="hidden" name="image" value="<%= encodeURIComponent(style.image) %>">
+  <input type="hidden" name="name" value="<%= style.name %>">
+  <input type="hidden" name="category" value="<%= style.category %>">
+  <button type="submit" class="btn-appoint">Make Appointment</button>
+</form>
+
+
+  </div>
+  <script src="/Main.js"></script>
+</body>
+</html>

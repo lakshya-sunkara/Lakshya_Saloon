@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Admin Signup</title>
+    <style>
+
+    body {
+      background-color: black;
+      color: white;
+      
+      text-align: center;
+    }
+    .signup-container {
+       margin-top: 3%;
+  display: inline-block;
+  padding: 5% 9%;
+  border: 3px solid black;   
+  border-radius: 50%;
+  box-shadow: 10px 10px 53px rgb(255, 0, 221),-10px -10px 53px red,10px -10px 53px red,-10px 10px 53px red;
+  margin-left: 0%;
+  font-size: 2em;
+  color: white;
+    }
+
+    .signup-container input:focus {
+      outline: none;
+      box-shadow: 0 0 10px pink;
+    }
+
+     .signup-container button {
+      padding: 10px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 15px;
+      background-color: limegreen;
+      color: white;
+      cursor: pointer;
+      margin-top: 15px;
+      margin-left: 0px;
+    }
+
+    .signup-container button:hover {
+      background-color: #00c400;
+      font-size: 1.25em;
+    }
+         .header-links {
+      position: absolute;
+      top: 45px;
+      right: 60px;
+    }
+
+    .header-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 2em;
+      margin-left: 30px;
+    }
+
+    .header-links a:hover {
+      color: rgb(190, 121, 17);
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="head" style="padding-bottom: 5px;margin-bottom: 0;">
+                <img src="/images/logo.jpg" alt="Saloon Logo"/>
+                <h1>Saloon</h1>
+                <div class="header-links">
+          <a href="/">Home</a>
+          <a href="/admin/login">Login</a>
+        </div>
+                
+            </div>
+            <hr style="margin-top:0;">
+        </nav>
+    </header>
+
+
+    <div class="signup-container">
+    <form method="POST" action="/admin/signup">
+      <h2 style="margin-bottom: 25px;">Admin Signup</h2>
+
+      <label for="username">Username</label><br>
+      <input type="text" name="username" id="username" required /><br>
+
+      <label for="email">Email</label><br>
+      <input type="email" name="email" id="email" required /><br>
+
+      <label for="password">Password</label><br>
+      <input type="password" name="password" id="password" required /><br>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p style="margin-top: 15px;">
+      Already an admin? <a href="/admin/login" style="color: rgb(255, 174, 0); text-decoration: none;">Login here</a>
+    </p>
+  </div>
+
+</body>
+</html>

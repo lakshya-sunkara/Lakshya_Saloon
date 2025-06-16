@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+
+    <link rel="stylesheet" href="/Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+      background-color: black;
+      color: white;
+      
+      text-align: center;
+    }
+
+    .signin-container{
+  margin-top: 8%;
+  display: inline-block;
+  padding: 5% 9%;
+  border: 3px solid black;   
+  border-radius: 50%;
+  box-shadow: 10px 10px 53px rgb(255, 0, 221),-10px -10px 53px red,10px -10px 53px red,-10px 10px 53px red;
+ 
+  font-size: 2em;
+  color: white;
+}
+
+     .header-links {
+      position: absolute;
+      top: 45px;
+      right: 60px;
+    }
+
+    .header-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 2em;
+      margin-left: 30px;
+    }
+
+    .header-links a:hover {
+      color: rgb(190, 121, 17);
+    }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <nav>
+            <div class="head" style="padding-bottom: 5px;margin-bottom: 0;">
+                <img src="/images/logo.jpg" alt="Saloon Logo"/>
+                <h1>Saloon</h1>
+                <div class="header-links">
+          <a href="/">Home</a>
+          <a href="/admin/signup">Sign up</a>
+        </div>
+                
+            </div>
+            <hr style="margin-top:0;">
+        </nav>
+    </header>
+    
+
+
+    <div class="signin-container">
+         
+         <h2>Admin Login</h2>
+  <form method="POST" action="/admin/login">
+    <label>Email:</label><br>
+    <input type="email" name="email" required /><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" name="password" required /><br><br>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p>Don’t have an account? <a style="color: rgb(255, 174, 0); text-decoration: none;" href="/admin/signup">Sign up</a></p>
+        
+        
+        
+        
+        
+        
+        
+    </div>
+
+   
+</body>
+</html>

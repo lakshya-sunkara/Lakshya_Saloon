@@ -1,0 +1,51 @@
+const paragraphs = document.querySelectorAll('.scroll-highlight p');
+
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.9;
+
+  paragraphs.forEach(p => {
+    const rect = p.getBoundingClientRect();
+    if (rect.top < triggerBottom) {
+      p.classList.add('visible');
+    }
+  });
+});
+
+
+
+
+
+.scroll-highlight {
+  background: black;
+  color: white;
+  font-size: 2rem;
+  font-family: serif;
+  line-height: 1.5;
+  padding: 100px 40px;
+}
+
+.scroll-highlight p {
+  opacity: 0.1;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(20px);
+}
+
+.scroll-highlight p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+<div class="scroll-highlight">
+  <p>experiences, better rewards, better rules.</p>
+  <p>this is the status quo we're building.</p>
+  <p>make it to the club, and</p>
+  <p>experience the ascension yourself.</p>
+</div>

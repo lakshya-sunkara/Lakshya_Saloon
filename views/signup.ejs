@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="Styles.css">
+   <style>
+    body {
+      background-color: black;
+      color: white;
+     
+      text-align: center;
+    }
+    </style>
+
+    
+</head>
+<body style="background-color: rgb(0, 0, 0);">
+    <header>
+        <nav>
+            <div class="head" style="padding-bottom: 0px;margin-bottom: 0;">
+                <img src="./images/logo.jpg"/>
+                <h1>Saloon</h1>
+                <a href="/" >Home</a>
+                <a href="/signin" >sign in</a>
+            </div>
+            <hr >
+
+            
+
+        </nav>
+    </header>
+    
+
+
+
+
+    <div class="signup-container">
+    <form method="POST" action="/register">
+      <h2 style="margin-bottom: 25px;">Signup</h2>
+
+      <label for="username">Username</label><br>
+      <input type="text" name="username" id="username" required /><br>
+
+      <label for="email">Email</label><br>
+      <input type="email" name="email" id="email" required /><br>
+
+      <label for="password">Password</label><br>
+      <input type="password" name="password" id="password" required /><br>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p style="margin-top: 15px;">
+      Already an admin? <a href="/admin/login" style="color: rgb(255, 0, 136);">Login here</a>
+    </p>
+  </div>
+    <br/><br/><br/> <br/>
+    
+    <script src="Main.js"></script>
+</body>
+</html>

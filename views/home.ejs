@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="head-home">
+                <div class="humberg-icon">
+                    <i class="fas fa-bars" onclick="toggleSearch(event)" ></i>
+                    
+                </div>
+                <img src="./images/logo.jpg"/>
+                <h1>Saloon</h1>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search...">
+                        <i class="fas fa-search search-icon" ></i>
+                    </div>
+                    <a title="profile" id="profileIcon" onclick="toggleSearch1(event)"><i class="fa fa-user" ></i> </a>
+            </div>
+            <div class="option-container" id="option-icon">
+                <ul style="list-style: none;">
+                    <a href="/home"><li><i class="fa fa-home"></i> Home</li></a>
+                    <a href="/services"><li><i class="fa-solid fa-cogs"></i> Services</li></a>
+                    <a href="/appointment"><li><i class="fa fa-calendar-check"></i>  Appointments</li></a>
+                    
+                    <li><i class="fa-solid fa-receipt"></i>  payment history</li>
+                    <li><i class="fa fa-credit-card"></i> Payments</li>
+                    <a href="/about_us"><li><i class="fa-solid fa-user-group"></i> About us
+                    </li></a>
+                    <a href="#" onclick="document.getElementById('logout-form').submit();"><li><i class="fa fa-sign-out-alt"></i> Sign out</li></a>
+                    <form id="logout-form" style="display: none;" action="/log-out" method="post">
+                        
+                    </form>
+                        
+                </ul>
+            </div>  
+            </nav>
+    </header>
+    <div class="profile-container" id="profile-container">
+        <h1>profile</h1>
+        <img src="./images/profile_picture_new.jpg"/>
+        <p ><b>username: </b><span id="username"></span></p>
+        <p ><b>Name: </b><span id="name"></span></p>
+        <p ><b>Email id: </b><span id="email"></span></p>
+        <p ><b>PhoneNumber: </b><span id="phone"></span></p>
+        <p ><b>Address: </b><span id="address"></span></p>
+        <p ><b>Gender: </b><span id="gender"></span></p>
+        <p ><b>Date Of Birth: </b><span id="dob"></span></p>
+        <button id="edit-profile">edit profile</button>
+        <button id="delete-account">Delete Account</button>
+    </div>
+
+    <div class="slider">
+        <div class="slides">
+            <img class="slide1" src="./images/shop1.jpg" alt="#img1">
+            <img class="slide1" src="./images/shop2.jpg" alt="#img1">
+            <img class="slide1" src="./images/shop3.jpg" alt="#img1">
+            <img class="slide1" src="./images/shop4.jpg" alt="#img1">
+            <img class="slide1" src="./images/shop5.jpg" alt="#img1">
+            <img class="slide1" src="./images/shop6.webp" alt="#img1">
+        </div>
+        <button class="previous" onclick="prevImg()">  <b>&#8592; </b></button>
+        <button class="next" onclick="nextImg()"><b>&#8594;</b></button>
+    </div>
+
+
+
+
+
+
+    <h2 style="margin-left: 4%;font-size: 2em;font-weight: bold;">Hair Styles</h2>
+<div class="scroll-row">
+  <% styles.forEach(style => { %>
+    <%- include('partials/card', { style: style }) %>
+  <% }) %>
+</div>
+
+<h2 style="margin-left: 4%;font-size: 2em;font-weight: bold;"">Beard Styles</h2>
+<div class="scroll-row">
+  <% beardStyles.forEach(style => { %>
+    <%- include('partials/card', { style: style }) %>
+  <% }) %>
+</div>
+
+<h2 style="margin-left: 4%;font-size: 2em;font-weight: bold;"">Facial Styles</h2>
+<div class="scroll-row">
+  <% facialStyles.forEach(style => { %>
+    <%- include('partials/card', { style: style }) %>
+  <% }) %>
+</div>
+
+<h2 style="margin-left: 4%;font-size: 2em;font-weight: bold;"">Child Haircuts</h2>
+<div class="scroll-row">
+  <% childHaircutStyles.forEach(style => { %>
+    <%- include('partials/card', { style: style }) %>
+  <% }) %>
+</div>
+
+<h2 style="margin-left: 4%;font-size: 2em;font-weight: bold;"">Massage Styles</h2>
+<div class="scroll-row">
+  <% massageStyles.forEach(style => { %>
+    <%- include('partials/card', { style: style }) %>
+  <% }) %>
+</div>
+
+
+
+    <div class="rules">
+        <h1><i class="fa-solid fa-clock" style="color: rgb(237, 2, 2);"></i> Booking an Appointment</h1>
+        <ul>
+            <li>Visit our website and log in/sign up.            </li>
+            <li>Go to the <a href="">"Services"</a> section.            </li>
+            <li>Choose your desired service, date, and time slot.            </li>
+            <li>Pay the ₹100 booking fee online.            </li>
+            <li>Receive a confirmation via Email or WhatsApp.
+            </li>
+        </ul>
+        <hr>
+        <h1><i class="fa-solid fa-clipboard-check" style="color: green;"></i> After Completion of the Haircut</h1>
+        <ul>
+            <li>      Visit the <a href="">"Payments"</a> section on our website.            </li>
+            <li>            An invoice for the remaining amount will be generated.            </li>
+            <li>Choose a payment method (UPI, Debit/Credit Card, Net Banking, Wallets).           </li>
+            <li>        After successful payment, the invoice is updated.            </li>
+           
+        </ul>
+        <hr>
+        <h1><i class="fa-solid fa-clock-rotate-left" style="color: rgb(6, 34, 250);"></i>  Checking Appointment History</h1>
+        <ul>
+            <li>    Go to the <a href="">"Appointments"</a> section in your profile.   </li>
+            <li>       View past & upcoming appointments with details.            </li>
+            <li>         Reschedule or cancel appointments (if applicable).</li>    
+        </ul>
+        <hr>
+        <h1><i class="fa-solid fa-money-check-dollar" style="color: rgb(2, 183, 255);"></i> Checking Payment History</h1>
+        <ul>
+            <li>Visit the <a href="">"Payment History"</a> section in your profile.            </li>
+            <li>  Track previous payments, including booking fees & final payments.            </li>
+            <li> Download invoices for your records.            </li>  
+        </ul>
+        <hr>
+        <h1><i class="fa-solid fa-info-circle"></i> Learn More About Us</h1>
+        <ul>
+            <li>Click on the <a href="about_us.html">"About Us"</a> section to know more about our salon.</li>
+            <li>Find details about our services, offers, and team.            </li>
+        </ul>
+        <h1>📌 Why Use Our Online System?</h1>
+        <p>✅ Convenient – No need to carry cash; pay online anytime!</p>
+        <p>✅ Transparent – View all your invoices & history.</p>
+        <p>✅ Secure – Safe & trusted payment options.</p>
+        <p>✅ Easy Access – Manage your bookings & payments in one place.</p>
+    </div>
+
+
+
+   
+    <footer style="background-color: black; color: white; padding: 1px; margin: 0%;">
+
+        <div class="color" >
+          <p>© 2025 <span style="font-style: italic;color:rgb(190, 121, 17)">Lakshya Salon</span>. All Rights Reserved.</p>
+          
+          <p>
+              📍 <strong>Location:</strong> near nehru nagar, macherla, 522 426 |  
+              📞 <strong>Call Us:</strong> +91 8185951583 |  
+              📩 <strong>Email:</strong> <a href="mailto:lakshyasunkara2004@gmail.com"   class="link">lakshyasunkara2004@gmail.com</a>
+          
+          <p>
+              <strong>Follow Us:</strong>  
+              <a href="https://www.instagram.com/sunkara_srinivasarao_1/" class="link" ><i class="fab fa-instagram" style="color:rgb(243, 5, 160)"></i> Instagram</a> |  
+              <a href="[Facebook Link]" class="link"><i class="fab fa-facebook " style="color:rgb(5, 73, 243)"></i> Facebook</a> |  
+              <a href="https://x.com/sunkarassnaidu" class="link"><i class="fab fa-twitter " style="color: rgb(251, 251, 251);"></i> X</a>
+          </p>
+          
+          <p>
+              <a href="privacy-policy.html" class="link">Privacy Policy</a> |  
+              <a href="terms-conditions.html" class="link">Terms & Conditions</a>
+          </p>
+          </p>
+  
+        </footer>
+    <script src="Main.js"></script>
+
+    </body>
+    </html>

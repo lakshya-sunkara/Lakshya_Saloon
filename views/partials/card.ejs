@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+ <div class="style-card" onclick="window.location.href='/style/<%= style._id %>'" style="cursor: pointer;">
+  <img src="<%= style.image %>" alt="<%= style.name %>">
+  <p><strong>Name:</strong> <%= style.name %></p>
+  <p><strong>Category:</strong> <%= style.category %></p>
+  <p><strong>Price:</strong> ₹<%= style.price %></p>
+</div>
+
+
+
+
+
+    <script src="Main.js">
+
+   
+
+    </script>
+</body>
+</html>

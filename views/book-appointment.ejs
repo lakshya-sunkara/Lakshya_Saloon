@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Book Appointment</title>
+  <link rel="stylesheet" href="/Styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    .booking-wrapper {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      background: #fff;
+      font-family: Arial, sans-serif;
+    }
+    .booking-wrapper img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .form-group {
+      margin: 15px 0;
+      width:90%;
+    }
+    label {
+      font-weight: bold;
+    }
+    select, input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .submit-btn {
+      padding: 12px 20px;
+      border: none;
+      background-color: #101010;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #363637;
+    }
+    /* Better form control appearance */
+select, input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 2px solid #ced4da;
+  background-color: #f0f8ff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+select:focus, input[type="date"]:focus {
+  border-color: #131414;
+  background-color: #e6f0ff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(80, 80, 81, 0.5);
+}
+
+/* Enhance dropdown options */
+select option {
+  background: #ffffff;
+  color: #333;
+  padding: 10px;
+}
+
+/* Fancy hover effect (optional) using JS to add classes) */
+.form-group:hover label {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+  </style>
+</head>
+<body>
+   <header>
+        <nav>
+            <div class="head-home">
+                <div class="humberg-icon">
+                    <i class="fas fa-bars" onclick="toggleSearch(event)" ></i>
+                    
+                </div>
+                <img src="./images/logo.jpg"/>
+                <h1>Saloon</h1>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search...">
+                        <i class="fas fa-search search-icon" ></i>
+                    </div>
+                    <a title="profile" id="profileIcon" onclick="toggleSearch1(event)"><i class="fa fa-user" ></i> </a>
+            </div>
+            <div class="option-container" id="option-icon">
+                <ul style="list-style: none;">
+                    <a href="/home"><li><i class="fa fa-home"></i> Home</li></a>
+                    <a href="/service"><li><i class="fa-solid fa-cogs"></i> Services</li></a>
+                    <a href="/appointment"><li><i class="fa fa-calendar-check"></i>  Appointments</li></a>
+                    
+                    <li><i class="fa-solid fa-receipt"></i>  payment history</li>
+                    <li><i class="fa fa-credit-card"></i> Payments</li>
+                    <a href="/about_us"><li><i class="fa-solid fa-user-group"></i> About us
+                    </li></a>
+                    <a href="#" onclick="document.getElementById('logout-form').submit();"><li><i class="fa fa-sign-out-alt"></i> Sign out</li></a>
+                    <form id="logout-form" style="display: none;" action="/log-out" method="post">
+                        
+                    </form>
+                        
+                </ul>
+            </div>  
+            </nav>
+    </header>
+    <div class="profile-container" id="profile-container">
+        <h1>profile</h1>
+        <img src="./images/profile_picture_new.jpg"/>
+        <p ><b>username: </b><span id="username"></span></p>
+        <p ><b>Name: </b><span id="name"></span></p>
+        <p ><b>Email id: </b><span id="email"></span></p>
+        <p ><b>PhoneNumber: </b><span id="phone"></span></p>
+        <p ><b>Address: </b><span id="address"></span></p>
+        <p ><b>Gender: </b><span id="gender"></span></p>
+        <p ><b>Date Of Birth: </b><span id="dob"></span></p>
+        <button id="edit-profile">edit profile</button>
+        <button id="delete-account">Delete Account</button>
+    </div>
+
+  <div class="booking-wrapper">
+    <h2>Book Your Appointment</h2>
+    <img src="<%= decodeURIComponent(image) %>" alt="Style Image" />
+    <p><strong>Name:</strong> <%= name %></p>
+    <p><strong>Category:</strong> <%= category %></p>
+
+    <form action="/appointment" method="POST">
+      <input type="hidden" name="style" value="<%= name %>">
+      <input type="hidden" name="category" value="<%= category %>">
+
+      <div class="form-group">
+        <label for="date">Select Date:</label>
+        <input type="date" id="appointment-date" name="appointment_date" required>
+
+        
+      </div>
+
+      <div class="form-group">
+        <label for="time">Available Time Slots:</label>
+            <select name="time_slot" id="time-slot" required>
+  <option value="">Select a Time</option>
+  <option value="09:00 AM to 10:00 AM" data-start="9">09:00 AM to 10:00 AM</option>
+  <option value="10:00 AM to 11:00 AM" data-start="10">10:00 AM to 11:00 AM</option>
+  <option value="11:00 AM to 12:00 PM" data-start="11">11:00 AM to 12:00 PM</option>
+  <option value="12:00 PM to 01:00 PM" data-start="12">12:00 PM to 01:00 PM</option>
+  <option value="01:00 PM to 02:00 PM" data-start="13">01:00 PM to 02:00 PM</option>
+  <option value="02:00 PM to 03:00 PM" data-start="14">02:00 PM to 03:00 PM</option>
+  <option value="03:00 PM to 04:00 PM" data-start="15">03:00 PM to 04:00 PM</option>
+  <option value="04:00 PM to 05:00 PM" data-start="16">04:00 PM to 05:00 PM</option>
+  <option value="05:00 PM to 06:00 PM" data-start="17">05:00 PM to 06:00 PM</option>
+  <option value="06:00 PM to 07:00 PM" data-start="18">06:00 PM to 07:00 PM</option>
+  <option value="07:00 PM to 08:00 PM" data-start="19">07:00 PM to 08:00 PM</option>
+</select>
+
+
+      </div>
+
+      <button class="submit-btn" type="submit">Confirm Appointment</button>
+    </form>
+  </div>
+
+
+
+  <footer style="background-color: black; color: white; padding: 1px; margin: 0%;">
+
+        <div class="color" >
+          <p>© 2025 <span style="font-style: italic;color:rgb(190, 121, 17)">Lakshya Salon</span>. All Rights Reserved.</p>
+          
+          <p>
+              📍 <strong>Location:</strong> near nehru nagar, macherla, 522 426 |  
+              📞 <strong>Call Us:</strong> +91 8185951583 |  
+              📩 <strong>Email:</strong> <a href="mailto:lakshyasunkara2004@gmail.com"   class="link">lakshyasunkara2004@gmail.com</a>
+          
+          <p>
+              <strong>Follow Us:</strong>  
+              <a href="https://www.instagram.com/sunkara_srinivasarao_1/" class="link" ><i class="fab fa-instagram" style="color:rgb(243, 5, 160)"></i> Instagram</a> |  
+              <a href="[Facebook Link]" class="link"><i class="fab fa-facebook " style="color:rgb(5, 73, 243)"></i> Facebook</a> |  
+              <a href="https://x.com/sunkarassnaidu" class="link"><i class="fab fa-twitter " style="color: rgb(251, 251, 251);"></i> X</a>
+          </p>
+          
+          <p>
+              <a href="privacy-policy.html" class="link">Privacy Policy</a> |  
+              <a href="terms-conditions.html" class="link">Terms & Conditions</a>
+          </p>
+          </p>
+  
+        </footer>
+
+  <script src="Main1.js">
+  
+</script>
+
+</body>
+</html>

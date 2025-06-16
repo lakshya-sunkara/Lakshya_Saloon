@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="head-home">
+                <div class="humberg-icon">
+                    <i class="fas fa-bars" onclick="toggleSearch(event)" ></i>
+                    
+                </div>
+                <img src="./images/logo.jpg"/>
+                <h1>Saloon</h1>
+                <a title="profile"  id="profileIcon" onclick="toggleSearch1(event)" style="margin-left: 35%;"><i class="fa fa-user" ></i> </a>
+            </div>   
+                    
+            <div class="option-container" id="option-icon">
+                <ul style="list-style: none;">
+                    <a href="/home"><li><i class="fa-solid fa-house"></i> <!-- Home Icon -->
+                        Home</li></a>
+                    <a href="/services"><li><i class="fa-solid fa-cogs"></i> Services</li></a>
+                    <a href="/appointment"><li><i class="fa fa-calendar-check"></i>  Appointments</li></a>
+                    <li><i class="fa-solid fa-receipt"></i>  payment history</li>
+                    <li><i class="fa fa-credit-card"></i> Payments</li>
+                   
+                    <a href="#" onclick="document.getElementById('logout-form').submit();"><li><i class="fa fa-sign-out-alt"></i> Sign out</li></a>
+                    <form id="logout-form" style="display: none;" action="/log-out" method="post">
+                        
+                    </form>
+                </ul>
+            </div>  
+            </nav>
+    </header>
+
+
+    <div class="profile-container" id="profile-container">
+        <h1>profile</h1>
+        <img src="./images/profile_picture_new.jpg"/>
+        <p ><b>username: </b><span id="username"></span></p>
+        <p ><b>Name: </b><span id="name"></span></p>
+        <p ><b>Email id: </b><span id="email"></span></p>
+        <p ><b>PhoneNumber: </b><span id="phone"></span></p>
+        <p ><b>Address: </b><span id="address"></span></p>
+        <p ><b>Gender: </b><span id="gender"></span></p>
+        <p ><b>Date Of Birth: </b><span id="dob"></span></p>
+        <button id="edit-profile">edit profile</button>
+        <button id="delete-account">Delete Account</button>
+    </div>
+
+
+
+
+
+    <div class="about-container">
+        <div>
+            <h1>About Us – Welcome to <span style="font-style: italic;color:rgb(190, 121, 17)">Lakshya Salon</span></h1>
+        <p>At <span style="font-style: italic;color:rgb(190, 121, 17)">Lakshya Salon, </span>we believe that a great look starts with a great experience. Our salon is designed with a modern black-and-white theme, offering a stylish and relaxing atmosphere for our customers. Whether you’re looking for a trendy haircut, a well-groomed beard, or a refreshing facial, our professional stylists are here to provide top-notch service at affordable prices.</p>
+        <hr>
+    </div>
+        <div>
+            <h1>💈 Why Choose Us?</h1>
+            <p>✅ Expert Stylists – Trained professionals with years of experience.</p>
+            <p>✅ Premium Services – Haircuts, beard grooming, head massage, facials & more.</p>
+            <p>✅ Affordable Pricing – Quality services at budget-friendly rates.</p>
+            <p>✅ Discounts & Coupons – Get exclusive offers on appointments.</p>
+            <p>✅ Online Booking & Payments – Easy appointment scheduling & hassle-free payments.</p>
+       
+       
+            </div>
+            <hr>
+            <div >
+                <h1>📍 Our Location</h1>
+                <p><b>Address</b>:opposite to the civil court,guntur road,macherla,AP,india</p>
+                <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d317.0635600095875!2d79.44724191236558!3d16.472770476333718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1740421751901!5m2!1sen!2sin" width="1300" height="500" style="border:0;margin-left: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            
+            </div>
+            <hr>
+            <div>
+                <h1>📲 Connect With Us</h1>
+                <p>Follow us on social media to stay updated on the latest trends, offers, and promotions:</p>
+                <a href="https://www.instagram.com/sunkara_srinivasarao_1/" class="link" ><i class="fab fa-instagram" style="color:rgb(243, 5, 160)"></i> Instagram</a> |  
+                 <a href="[Facebook Link]" class="link"><i class="fab fa-facebook " style="color:rgb(5, 73, 243)"></i> Facebook</a> |
+                <a href="https://x.com/sunkarassnaidu" class="link"><i class="fab fa-twitter " style="color: rgb(0, 0, 0);"></i> X</a>
+           
+            </div>
+            <hr>
+            <div>
+                <h1>🔗 Book Your Appointment Today!</h1>
+                <p>Get the perfect style with just a few clicks. Visit our Services section, choose what you need, and book your appointment online!</p>
+            </div>
+            <hr>
+            <video id="salonVideo" autoplay loop muted >
+                <source src="./images/STYLISH & MODERN SALON INTERIOR DESIGN ｜ TONY & GUY ｜ BLACK & WHITE CONCEPT IDEA (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+
+
+            <div>
+                <h1>📌 Meet Our Owner – <a href="owner.html" alt="owner details" title="owner details" style="text-decoration: none; font-size: 1em; color: rgb(190, 121, 17);"  >Lakshya Sunkara</a></h1>
+                <p>At <span style="font-style: italic;color:rgb(190, 121, 17)">Lakshya Salon, </span> excellence in grooming starts with a vision. Our salon is proudly led by <span   style="text-decoration: none; font-size: 1em; color: rgb(190, 121, 17);">Lakshya Sunkara</span>, a passionate hairstylist and entrepreneur who has dedicated years to mastering the art of haircuts, beard styling, and self-care services.</p>
+
+                 <p>  From a young age, <span   style="text-decoration: none; font-size: 1em; color: rgb(190, 121, 17);">Lakshya Sunkara</span> was inspired by the power of transformation that a great haircut or a well-groomed beard can bring. With a deep love for creativity and customer satisfaction, he started <span style="font-style: italic;color:rgb(190, 121, 17)">Lakshya Salon, </span> aiming to provide top-quality services at affordable prices.</p>
+            </div>
+            <hr>
+            <div>
+                <h1>💈 The Vision Behind Our Salon</h1>
+                <p>✅ Premium Grooming, Affordable Prices – Everyone deserves a great look without spending a fortune.</p>
+                <p>✅ Hygiene & Comfort First – A clean and stylish black-and-white-themed salon for a relaxed experience.</p>
+                <p>✅ Expert Team – Trained professionals delivering the best hair & grooming services.</p>
+                <p>✅ Customer-Centric Approach – Every client gets a personalized experience with the best advice.</p>
+            </div>
+            <hr>
+            <div>
+                <h1>📢 A Message from <span   style="text-decoration: none; font-size: 1em; color: rgb(190, 121, 17);">Lakshya Sunkara</span></h1>
+                <p style="font-style: italic;">"My goal is to make every customer walk out with confidence and satisfaction. Grooming is not just about looks—it’s about feeling your best. At <span style="font-style: italic;color:rgb(190, 121, 17)">Lakshya Salon, </span> we make that happen!"</p>
+            </div>
+        
+    </div>
+
+
+
+
+
+    <footer style="background-color: black; color: white; padding: 1px; margin: 0%;">
+
+        <div class="color" >
+          <p>© 2025 <span style="font-style: italic;color:rgb(190, 121, 17)">Lakshya Salon</span>. All Rights Reserved.</p>
+          
+          <p>
+              📍 <strong>Location:</strong> near nehru nagar, macherla, 522 426 |  
+              📞 <strong>Call Us:</strong> +91 8185951583 |  
+              📩 <strong>Email:</strong> <a href="mailto:lakshyasunkara2004@gmail.com"   class="link">lakshyasunkara2004@gmail.com</a>
+          
+          <p>
+              <strong>Follow Us:</strong>  
+              <a href="https://www.instagram.com/sunkara_srinivasarao_1/" class="link" ><i class="fab fa-instagram" style="color:rgb(243, 5, 160)"></i> Instagram</a> |  
+              <a href="[Facebook Link]" class="link"><i class="fab fa-facebook " style="color:rgb(5, 73, 243)"></i> Facebook</a> |  
+              <a href="https://x.com/sunkarassnaidu" class="link"><i class="fab fa-twitter " style="color: rgb(251, 251, 251);"></i> X</a>
+          </p>
+          
+          <p>
+              <a href="privacy-policy.html" class="link">Privacy Policy</a> |  
+              <a href="terms-conditions.html" class="link">Terms & Conditions</a>
+          </p>
+          </p>
+  
+        </footer>
+    <script src="Main.js"></script>
+</body>
+</html>

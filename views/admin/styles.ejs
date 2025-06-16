@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Style</title>
+   <link rel="stylesheet" href="/Styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+     form {
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+    }
+    .option-container span:hover{
+      color: rgb(190, 121, 17);
+      
+    }
+    .option-container button{
+      margin: 0%;
+      background: none;
+       border: none; 
+       color: white; 
+       cursor: pointer;
+       font-size: 36px; 
+       margin-top: 10px;
+       font-weight:normal; 
+      
+    }
+  button {
+      padding: 10px 20px;
+      background-color: #151515;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      margin-left: 40%;
+        cursor: pointer;
+    }
+    button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+
+     <header>
+        <nav>
+            <div class="head-home">
+               <div class="humberg-icon">
+                    <i class="fas fa-bars" onclick="toggleSearch(event)" ></i>
+                    
+                </div>
+                <img  style="margin-left: 20%;"  src="/images/logo.jpg"/>
+                <h1>Saloon</h1>
+                    
+            </div>
+             <div class="option-container" id="option-icon">
+                <ul style="list-style: none;">
+                    <a href="/admin/dashboard"><li><i class="fa fa-home"></i> Home</li></a>
+                    
+                    <a href="/admin/users"><li><i class="fa fa-users"></i> All Users</li></a>
+
+                    <form id="admin-logout-form" action="/admin/logout" method="POST" style="display: inline;border: none; margin: 0%;padding: 0%;">
+  <button type="submit" style="background: none; border: none; color: white; cursor: pointer;font-size: 36px; margin-top: 10px;font-weight:normal;padding-left: 0%;">
+    <span ><i class="fa fa-sign-out-alt"></i> Sign out</span> 
+  </button>
+</form>
+                        
+                </ul>
+            </div>  
+            
+            </nav>
+    </header>
+    
+
+  <h2 style="text-align: center;">Add New Style</h2>
+
+  <form action="/add-style" method="POST" class="style-form">
+    <label for="styleId">Style ID</label>
+    <input type="text" name="styleId" id="styleId" required>
+
+    <label for="name">Style Name</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="category">Category</label>
+    <select name="category" id="category" required>
+      <option value="">-- Select Category --</option>
+      <option value="Hair">Hair</option>
+      <option value="Beard">Beard</option>
+      <option value="Facial">Facial</option>
+      <option value="Massage">Massage</option>
+      <option value="Child Hair Cut">Child Hair Cut</option>
+    </select>
+
+    <label for="price">Price </label>
+    <input type="text" name="price" id="price" required>
+
+    <label for="image">Image URL </label>
+    <input type="text" name="image" id="image" required>
+
+    <button type="submit">Add Style</button>
+    
+  </form>
+
+<% if (typeof message !== 'undefined' && message) { %>
+  <% var color = (typeof messageColor !== 'undefined' && messageColor) ? messageColor : 'green'; %>
+  <p style="text-align: center; font-weight: bold;">
+    <%= message %>
+  </p>
+<% } %>
+
+
+
+
+
+  <script src="/Main.js"></script>
+</body>
+</html>
