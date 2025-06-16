@@ -14,7 +14,7 @@ const UserProfile=require('./models/UserProfile')
 const Appointment=require('./models/Appointment')
 const bcrypt=require('bcryptjs')
 const path = require('path');
-const Admin = require('./models/admin');
+const Admin = require('./models/Admin');
 
 
 const port =process.env.port || 1981
