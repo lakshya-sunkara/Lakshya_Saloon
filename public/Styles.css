@@ -52,6 +52,7 @@ body{
     font-size: 40px;
     margin-right: 1px;
     margin-bottom: 1px;
+      font-style:italic;
   }
 
   .head a {
